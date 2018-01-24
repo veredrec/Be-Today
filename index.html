@@ -2,42 +2,67 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <script src="https://use.fontawesome.com/7a1353cd80.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <title>Be Today</title>
   </head>
   <body>
 
   <!-- WRAPPER -->
   <section class="wrapper">
+    <!-- DATE & TIME -->
+    <p class="date" id="date"></p>
+    <h2 class="time" id="time"></h2>
 
     <!-- QUOTE -->
-    <h2 class="quote" id="qoute"> Life is so Great </h2>
-    <button class="change-quote" id="changeQuote">Change Quote</button>
+    <h2 class="quote" id="quote">The best preparation for tomorrow is doing your best today</h2>
+    <h3 class="author" id="author">H. Jackson Brown, Jr.</h3>
+    <button class="btn-quote" id="btnQuote">Change Quote</button>
 
     <!-- HELLO NAME -->
-    <h1 class="hello">Hello <span class="name" id="name">Vered</span></h1>
+    <div class="user-name" id="userName">
+      <input
+        type="text"
+        class="name-input"
+        id="nameInput"
+        placeholder="Please enter your name"
+      />
+
+      <!-- TODO: add css hide Hello when loading the page -->
+
+      <h2 class="hello">
+        Hello
+        <span class="name" id="name"></span>
+      </h2>
+    </div>
 
     <!-- DAILY GOAL -->
-    <h2 class="goal_title">Today's Goal:
-      <span class="goal" id="goal"></span>
-    </h2>
+    <div class="user-name" id="userName">
+      <input
+        type="text"
+        class="goal-input"
+        id="goalInput"
+        placeholder="What is your goal today?"
+      />
+      <!-- Todo: add css hide Today's Goal when loading the page -->
+      <h2 class="goal_title">Today's Goal:
+        <span class="goal" id="goal"></span>
+      </h2>
+    </div>
 
     <!-- ACTIVITIES -->
-    <h2 class="activities_title">Ideas for my breaks: <h2>
-    <ul class="list" id="list">
-      <li class="list_item">Go for a walk outside</li>
-      <li class="list_item">Call a Friend</li>
-      <li class="list_item">Play a short game</li>
-    </ul>
+    <h2 class="activities_title">I need a break<h2>
+      <button class="btn-act" id="btnAct">give me ideas</button>
+    <ul class="list" id="list"></ul>
 
-    <!-- WEATHER (ICON, DEGREES) -->
+    <!-- WEATHER -->
     <div class="weather">
-      <p class="place">
-        <span class="city" id="city">South Bend,</span>
-        <span class="country" id="county"> IN</span>
-      </p>
-      <p class="weather" id="weather">54&deg;</p>
+      <p class="place" id="place">South Bend, IN</p>
+      <p><span class="degrees" id="degrees">54</span>&deg;</p>
       <button class="degrees-f" id="degreesF">F</button>
       <button class="degrees-c" id="degreesC">C</button>
+      <p class="condition" id="condition">Cloudy</p>
+      <img class="weather-image" id="weatherImage" alt="weather today">
     </div>
 
   </section>
