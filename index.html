@@ -2,71 +2,70 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <script src="https://use.fontawesome.com/7a1353cd80.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/7a1353cd80.js">
+    </script>
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js">
+    </script>
     <title>Be Today</title>
   </head>
+
   <body>
+    <div class="wrapper">
+      <!-- QUOTE -->
+      <div class="quoteArea">
+        <h2 class="quote" id="quote">The best preparation for tomorrow is doing your best today</h2>
+        <div class="quote-bottom">
+          <h3 class="author" id="author">H. Jackson Brown, Jr.</h3>
+          <button class="btn-quote" id="btnQuote">Change Quote</button>
+        </div>
+      </div>
 
-  <!-- WRAPPER -->
-  <section class="wrapper">
-    <!-- DATE & TIME -->
-    <p class="date" id="date"></p>
-    <h2 class="time" id="time"></h2>
+      <!-- HELLO NAME -->
+      <div class="user-name" id="userName">
+        <input class="name-input" id="nameInput"
+        placeholder="Your name" type="text" />
+        <h2 class="name-title hide-area" id="nameTitle">
+          Hello
+          <span class="name" id="name"></span>
+        </h2>
+      </div>
 
-    <!-- QUOTE -->
-    <h2 class="quote" id="quote">The best preparation for tomorrow is doing your best today</h2>
-    <h3 class="author" id="author">H. Jackson Brown, Jr.</h3>
-    <button class="btn-quote" id="btnQuote">Change Quote</button>
+      <!-- DAILY GOAL -->
+      <div class="user-goal" id="userGoal">
+        <input class="goal-input" id="goalInput"
+        placeholder="Your goal for today?" type="text" />
+        <h2 class="goal-title hide-area" id="goalTitle">
+          Today's Goal:
+          <span class="goal" id="goal"></span>
+        </h2>
+      </div>
 
-    <!-- HELLO NAME -->
-    <div class="user-name" id="userName">
-      <input
-        type="text"
-        class="name-input"
-        id="nameInput"
-        placeholder="Please enter your name"
-      />
+      <!-- ACTIVITIES -->
+      <div class="act-area">
+        <h2 class="act-title">I need a break</h2>
+        <button class="btn-act" id="btnAct">give me ideas</button>
+        <ul class="list" id="list"></ul>
+      </div>
 
-      <!-- TODO: add css hide Hello when loading the page -->
+      <!-- DATE & TIME -->
+      <div class="time-date">
+        <p class="date" id="date"></p>
+        <h2 class="time" id="time"></h2>
+      </div>
 
-      <h2 class="hello">
-        Hello
-        <span class="name" id="name"></span>
-      </h2>
+      <!-- WEATHER -->
+      <div class="weather">
+        <p class="place" id="place">South Bend, IN</p>
+          <!-- <p><span class="degrees" id="degrees">54</span>&deg;</p>
+          <button class="degrees-f" id="degreesF">F</button>
+          <button class="degrees-c" id="degreesC">C</button>
+          <p class="condition" id="condition">Cloudy</p>
+          <img class="weather-image" id="weatherImage" alt="weather today"> -->
+      </div>
     </div>
 
-    <!-- DAILY GOAL -->
-    <div class="user-name" id="userName">
-      <input
-        type="text"
-        class="goal-input"
-        id="goalInput"
-        placeholder="What is your goal today?"
-      />
-      <!-- Todo: add css hide Today's Goal when loading the page -->
-      <h2 class="goal_title">Today's Goal:
-        <span class="goal" id="goal"></span>
-      </h2>
-    </div>
-
-    <!-- ACTIVITIES -->
-    <h2 class="activities_title">I need a break<h2>
-      <button class="btn-act" id="btnAct">give me ideas</button>
-    <ul class="list" id="list"></ul>
-
-    <!-- WEATHER -->
-    <div class="weather">
-      <p class="place" id="place">South Bend, IN</p>
-      <p><span class="degrees" id="degrees">54</span>&deg;</p>
-      <button class="degrees-f" id="degreesF">F</button>
-      <button class="degrees-c" id="degreesC">C</button>
-      <p class="condition" id="condition">Cloudy</p>
-      <img class="weather-image" id="weatherImage" alt="weather today">
-    </div>
-
-  </section>
-
-  <script type="text/javascript" src="script.js"></script>
+    <script src="./script.js" type="text/javascript">
+    </script>
   </body>
 </html>

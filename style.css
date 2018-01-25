@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  text-align: center;
+}
+.wrapper {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+/* QUOTE */
+.quoteArea {
+  color: purple;
+}
+.quote {
+  font-size: 1.4rem;
+}
+.author {
+  text-align: right;
+  font-size: 0.7rem;
+}
+.quote-bottom {
+  margin: -1rem 4rem 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+.btn-quote {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid silver;
+  padding: 0.1rem;
+  color: silver;
+}
+
+/* NAME & GOAL */
+.name-title,
+.goal-title {
+  transition: all 0.3s linear;
+  /*add some kind of transition*/
+  margin-top: -2rem;
+}
+.name-title {
+  font-size: 2rem;
+}
+.goal-title {
+  font-size: 1.5rem;
+}
+.goal-title .goal {
+  font-size: 2.2rem;
+}
+.show-area {
+  visibility: visible;
+  margin-top: -2rem;
+}
+.hide-area {
+  visibility: hidden;
+}
+.name-input,
+.goal-input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid silver;
+  padding: 0.2rem;
+  font-size: 1.2rem;
+  color: silver;
+}
+
+/* ACTIVITIES */
+.act-title {
+  font-size: 1.4rem;
+  color: green;
+}
+.btn-act {
+  background-color: grey;
+  border: 1px solid silver;
+  padding: 0.3rem;
+  color: black;
+}
+.list {
+  list-style-type: none;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32%;
+  align-content: flex-start;
+}
+
+/* DATE & TIME */
+.date {
+  font-size: 1rem;
+  color: red;
+  margin-bottom: -2rem;
+}
+.time {
+  font-size: 2.5rem;
+  color: grey;
+}
