@@ -1,29 +1,29 @@
-// TODO:
-// - hide api keys
-// - build server
-// - deploy to Heroku
-
 // QUOTE
 var quoteUrl =
   'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=?';
 var quote, author;
 var getQuote = function(data) {
-  if (!data.quoteAuthor) {
-    author = 'Anonymous';
+  if (!data) {
+    $('#quote').text(
+      'The best preparation for tomorrow is doing your best today'
+    );
+    $('#author').text('- H. Jackson Brown, Jr.');
+  } else if (!data.quoteAuthor) {
+    data.quoteAuthor = '- Anonymous';
   }
   quote = data.quoteText;
   author = data.quoteAuthor;
   $('#quote').text(quote);
-  $('#author').text('- ' + author);
+  $('#author').text(author);
 };
+
+$(document).ready(function() {
+  $.getJSON(quoteUrl, getQuote);
+});
 
 $('#btnQuote').click(function() {
   $.getJSON(quoteUrl, getQuote);
 });
-
-// if (author === 'Donald Trump' || quote.length > 120) {
-//   $.getJSON(quoteUrl, getQuote);
-// }
 
 // NAME
 $('#nameInput').keyup(function(e) {
@@ -32,7 +32,7 @@ $('#nameInput').keyup(function(e) {
     $('#name').text(nameInput);
     $('#nameInput').val('');
     $('#nameInput').attr('class', 'hide-area');
-    $('#nameTitle').toggleClass('hide-area');
+    $('#nameTitle').toggleClass('show-area');
   }
 });
 
@@ -40,7 +40,7 @@ $('#nameInput').keyup(function(e) {
 $('#goalInput').keyup(function(e) {
   if (e.keyCode == 13) {
     var nameInput = $('#goalInput').val();
-    $('#goal').text(nameInput);
+    $('#goal').text('My goal: ' + nameInput);
     $('#goalInput').val('');
     $('#goalInput').attr('class', 'hide-area');
     $('#goalTitle').toggleClass('hide-area');
@@ -58,7 +58,7 @@ var activities = [
   { activity: 'Read your favorive book', icon: 'fa fa-book' },
   { activity: 'Add a nice app to your phone', icon: 'fa fa-mobile' },
   { activity: 'Do some yoga for 10 minutes', icon: 'fa fa-heart' },
-  { activity: 'Dance with your favorite song', icon: 'fa fa-music' },
+  { activity: 'Dance to your favorite song', icon: 'fa fa-music' },
   { activity: 'Write your thoughts in a notebook', icon: 'fa fa-pencil' },
   { activity: 'Open a random Wikipedia page', icon: 'fa fa-file' },
   { activity: 'Make a fruit shake', icon: 'fa fa-apple' },
@@ -67,7 +67,7 @@ var activities = [
   { activity: 'Listen to music', icon: 'fa fa-headphones' },
   { activity: 'Play sports', icon: 'fa fa-futbol-o' },
   { activity: 'Write a letter to someone', icon: 'fa fa-envelope' },
-  { activity: 'Take a quick shower', icon: 'fa fa-shower' },
+  { activity: 'Take a quick shower', icon: 'fa fa-bath' },
   { activity: 'Watch a video on YouTube', icon: 'fa fa-film' },
   { activity: 'Bike for a few minutes', icon: 'fa fa-bicycle' },
   { activity: 'Take a random photo', icon: 'fa fa-photo' },
@@ -102,32 +102,68 @@ $('#btnAct').click(function() {
     act.addClass('list-item');
     $('#list').append(act);
   }
-  $('#btnAct').text('Maybe other ideas?');
+  $('#btnAct').text('Break ideas');
 });
 
-// DATE & TIME
+// BACKGROUND
+var images = [
+  'beach.jpeg',
+  'fall.jpg',
+  'travel.jpg',
+  'mountains.jpg',
+  'bridge.jpg',
+  'flowers.jpeg',
+  'path.jpeg',
+  'field.jpeg',
+  'ocean.jpg',
+  'lake.jpeg'
+];
+
+// grab the option value from dropdown menu and match with the array element
+$('select').change(function() {
+  $('select option:selected').each(function() {
+    var optVal = $(this).val();
+    var image = './assets/' + images[optVal] + '';
+    var imageUrl = 'url("' + image + '")';
+    $('.bg').css({
+      'background-image': imageUrl,
+      'background-size': 'cover'
+    });
+  });
+});
+
+$('#btnBg').click(function() {
+  $('#menuAct').toggleClass('hide-area');
+});
+
+// TIME
 var seconds;
 function callTime() {
-  var currentDate = new Date().toLocaleString().split(',');
-  var date = currentDate[0];
-  var t = currentDate[1].split(':');
+  var currentTime = new Date().toLocaleString().split(',')[1];
+  var t = currentTime.split(':');
   var time = t[0] + ':' + t[1] + ' ' + t[2].split(' ')[1];
   seconds = t[0] + ':' + t[1] + ' ' + t[2].split(' ')[0];
-  $('#date').text(date);
   $('#time').text(time);
 }
 callTime();
 setInterval(callTime, 5000);
-// PLACE & WEATHER (weather requires API Key - removed for now)
+
+// DATE
+function callDate() {
+  var currentDate = new Date().toLocaleString().split(',')[0];
+  $('#date').text(currentDate);
+}
+callDate();
+setInterval(callDate, 60000);
+
+// PLACE
 var addressUrl = 'http://ip-api.com/json';
-var areaWeather, areaName;
-// var tempF, tempC;
+var areaName;
 
 // fetch the place by IP address
 fetch(addressUrl)
   .then(resp => resp.json())
   .then(function(data) {
-    // areaWeather = data.region + '/' + data.city;
     areaName = data.city + ', ' + data.region;
     $('#place').text(areaName);
   });

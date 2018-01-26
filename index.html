@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <script src="https://use.fontawesome.com/7a1353cd80.js">
     </script>
     <link href="./style.css" rel="stylesheet">
@@ -12,51 +14,70 @@
 
   <body>
     <div class="wrapper">
+      <div class="bg"></div>
+
       <!-- QUOTE -->
-      <div class="quoteArea">
-        <h2 class="quote" id="quote">The best preparation for tomorrow is doing your best today</h2>
-        <div class="quote-bottom">
-          <h3 class="author" id="author">H. Jackson Brown, Jr.</h3>
-          <button class="btn-quote" id="btnQuote">Change Quote</button>
+      <div class="quote-area">
+        <h2 class="quote" id="quote"></h2>
+        <p class="author" id="author"></p>
+      </div>
+
+      <section class="main">
+        <div class="main-part side-menu">
+          <button class="btn btn-quote" id="btnQuote">Change Quote</button>
+          <button class="btn btn-act" id="btnAct">I need a break</button>
+          <button class="btn btn-bg" id="btnBg">Explore Images</button>
+          <select class="hide-area select-menu" id="menuAct">
+            <option value="0" class="bg-option"> Select Image </option>
+            <option value="0" class="bg-option"> Shiny Beach </option>
+            <option value="1" class="bg-option"> Bright Autumn </option>
+            <option value="2" class="bg-option"> Summer Travel </option>
+            <option value="3" class="bg-option"> Crisp Mountains </option>
+            <option value="4" class="bg-option"> Sunset on the water </option>
+            <option value="5" class="bg-option"> Graceful Flowers </option>
+            <option value="6" class="bg-option"> Lively Path </option>
+            <option value="7" class="bg-option"> Homely Field </option>
+            <option value="8" class="bg-option"> Piece of Ocean </option>
+            <option value="9" class="bg-option"> Lake Below the Mountains </option>
+          </select>
         </div>
-      </div>
 
-      <!-- HELLO NAME -->
-      <div class="user-name" id="userName">
-        <input class="name-input" id="nameInput"
-        placeholder="Your name" type="text" />
-        <h2 class="name-title hide-area" id="nameTitle">
-          Hello
-          <span class="name" id="name"></span>
-        </h2>
-      </div>
+        <!-- HELLO NAME -->
+        <div class="main-part name-goal-wrapper">
+          <div class="user-name" id="userName">
+            <input class="name-input" id="nameInput"
+            placeholder="Your name" type="text" />
+            <h2 class="name-title hide-area" id="nameTitle">
+              Hello,
+              <span class="name" id="name"></span>
+            </h2>
+          </div>
 
-      <!-- DAILY GOAL -->
-      <div class="user-goal" id="userGoal">
-        <input class="goal-input" id="goalInput"
-        placeholder="Your goal for today?" type="text" />
-        <h2 class="goal-title hide-area" id="goalTitle">
-          Today's Goal:
-          <span class="goal" id="goal"></span>
-        </h2>
-      </div>
+          <!-- DAILY GOAL -->
+          <div class="user-goal" id="userGoal">
+            <input class="goal-input" id="goalInput"
+            placeholder="Your goal for today?" type="text" />
+            <h2 class="goal-title hide-area" id="goalTitle">
+              <span class="goal" id="goal"></span>
+            </h2>
+          </div>
+        </div>
+      </section>
 
       <!-- ACTIVITIES -->
       <div class="act-area">
-        <h2 class="act-title">I need a break</h2>
-        <button class="btn-act" id="btnAct">give me ideas</button>
         <ul class="list" id="list"></ul>
       </div>
 
       <!-- DATE & TIME -->
       <div class="time-date">
-        <p class="date" id="date"></p>
         <h2 class="time" id="time"></h2>
       </div>
 
       <!-- WEATHER -->
-      <div class="weather">
-        <p class="place" id="place">South Bend, IN</p>
+      <div class="place-date">
+        <p class="date" id="date"> </p>
+        <p class="place" id="place"> </p>
           <!-- <p><span class="degrees" id="degrees">54</span>&deg;</p>
           <button class="degrees-f" id="degreesF">F</button>
           <button class="degrees-c" id="degreesC">C</button>
