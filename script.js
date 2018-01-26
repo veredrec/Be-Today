@@ -157,13 +157,14 @@ callDate();
 setInterval(callDate, 60000);
 
 // PLACE
-var addressUrl = 'http://ip-api.com/json';
+// fetch the place by IP address
+var addressUrl = 'https://ipapi.co/json';
 var areaName;
 
-// fetch the place by IP address
 fetch(addressUrl)
   .then(resp => resp.json())
   .then(function(data) {
+    console.log(data);
     areaName = data.city + ', ' + data.region;
     $('#place').text(areaName);
   });
