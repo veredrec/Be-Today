@@ -67,7 +67,6 @@ var activities = [
   { activity: 'Listen to music', icon: 'fa fa-headphones' },
   { activity: 'Play sports', icon: 'fa fa-futbol-o' },
   { activity: 'Write a letter to someone', icon: 'fa fa-envelope' },
-  { activity: 'Take a quick shower', icon: 'fa fa-bath' },
   { activity: 'Watch a video on YouTube', icon: 'fa fa-film' },
   { activity: 'Bike for a few minutes', icon: 'fa fa-bicycle' },
   { activity: 'Take a random photo', icon: 'fa fa-photo' },
