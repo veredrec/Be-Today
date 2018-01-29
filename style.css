@@ -81,15 +81,16 @@ input:active {
 .btn {
   margin-top: 1.5rem;
   font-size: 0.8rem;
-  border-bottom: 1px solid #8eaebd;
   padding-bottom: 0.5rem;
-  color: #30415d;
+  color: #535353;
   cursor: pointer;
   width: 40%;
+  text-decoration: underline;
+  text-underline-position: under;
 }
 .select-menu,
 .bg-option {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: #8eaebd;
   background-color: #fcfcee;
   width: 45%;
