@@ -34,16 +34,18 @@ input {
   background-color: transparent;
   font-family: 'Comfortaa', cursive;
 }
-button:focus {
+button:focus,
+input:focus {
   outline: 0;
 }
-button:active {
+button:active,
+input:active {
   outline: 0;
 }
 
 /* QUOTE */
 .quote-area {
-  color: #826080;
+  color: #4b8672;
   width: 70%;
   display: block;
   margin: 0 auto;
@@ -96,6 +98,7 @@ button:active {
   border: 0px;
   outline: 0px;
   margin: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 /* NAME & GOAL */
@@ -121,12 +124,17 @@ button:active {
   padding: 0.2rem;
   font-size: 1.2rem;
   color: #535353;
+  transition: all 0.3s linear;
+}
+.name-input:hover,
+.goal-input:hover {
+  border-bottom: 1px solid #535353;
+  padding-bottom: 0.4rem;
 }
 
 /* ACTIVITIES */
 .list {
   list-style-type: none;
-  font-size: 1.3rem;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -143,7 +151,7 @@ button:active {
   margin: 1rem;
   font-size: 1.2rem;
   line-height: 2rem;
-  color: #826080;
+  color: #4b8672;
 }
 
 /* DATE & PLACE */
@@ -158,6 +166,9 @@ button:active {
 .date,
 .place {
   font-size: 1rem;
+}
+.date {
+  letter-spacing: 0.1rem;
 }
 
 /* TIME */
