@@ -2,6 +2,8 @@
 
 Web app for getting motivated, keeping track of time, having ideas for frequent breaks, and enjoying beautiful sights. All while you are working.
 
+Please visit the page [here](https://veredrec.github.io/Be-Today/)
+
 Tech:
 
 * jQuery
@@ -10,4 +12,8 @@ Tech:
 * HTML5
 * CSS3
 
-Please visit the page [here](https://veredrec.github.io/Be-Today/)
+![quote](./assets/qoute.png)
+
+![name and goal](./assets/name-goal.png)
+
+![ideas for breaks](./assets/break.png)
