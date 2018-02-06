@@ -25,27 +25,26 @@ $('#btnQuote').click(function() {
   $.getJSON(quoteUrl, getQuote);
 });
 
-// NAME
-$('#nameInput').keyup(function(e) {
-  if (e.keyCode == 13) {
-    var nameInput = $('#nameInput').val();
-    $('#name').text(nameInput);
-    $('#nameInput').val('');
-    $('#nameInput').attr('class', 'hide-area');
-    $('#nameTitle').toggleClass('show-area');
-  }
+// NAME & GOAL
+$('#submit').on('click', function() {
+  var nameInput = $('#nameInput').val();
+  var goalInput = $('#goalInput').val();
+  $('#submit').attr('class', 'hide-area');
+  changeName(nameInput);
+  changeGoal(goalInput);
 });
-
-// GOAL
-$('#goalInput').keyup(function(e) {
-  if (e.keyCode == 13) {
-    var nameInput = $('#goalInput').val();
-    $('#goal').text('My goal: ' + nameInput);
-    $('#goalInput').val('');
-    $('#goalInput').attr('class', 'hide-area');
-    $('#goalTitle').toggleClass('hide-area');
-  }
-});
+function changeName(text) {
+  $('#name').text(text);
+  $('#nameInput').val('');
+  $('#nameInput').attr('class', 'hide-area');
+  $('#nameTitle').toggleClass('hide-area');
+}
+function changeGoal(text) {
+  $('#goal').text('My goal: ' + text);
+  $('#goalInput').val('');
+  $('#goalInput').attr('class', 'hide-area');
+  $('#goalTitle').toggleClass('hide-area');
+}
 
 // ACTIVITIES
 var activities = [
@@ -163,7 +162,6 @@ var areaName;
 fetch(addressUrl)
   .then(resp => resp.json())
   .then(function(data) {
-    console.log(data);
     areaName = data.city + ', ' + data.region;
     $('#place').text(areaName);
   });
