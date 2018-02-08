@@ -135,6 +135,7 @@ input:active {
   font-size: 1.2rem;
   color: #23426d;
   transition: all 0.3s linear;
+  margin: 1rem;
 }
 .name-input:hover,
 .goal-input:hover {
